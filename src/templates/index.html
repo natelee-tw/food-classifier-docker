@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="An AI Powered Food Image Classification Web App">
+    <title>Mengyong's Food Predictor</title>
+    <link rel="shortcut icon" href="../static/favicon-32x32.png">
+    <link rel="stylesheet" href="../static/pure-min.css">
+    <link rel="stylesheet" href="../static/grids-responsive-min.css">
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+
+<div>
+    <div class="header">
+        <div class="pure-menu pure-menu-horizontal">
+            <a class="pure-menu-heading" href="https://www.aisingapore.org/">AI Singapore</a>
+
+            <ul class="pure-menu-list">
+                <li class="pure-menu-item pure-menu-selected"><a href="#" class="pure-menu-link">Home</a></li>
+                <li class="pure-menu-item"><a href="/info" class="pure-menu-link">Documentation</a></li>
+                <li class="pure-menu-item"><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstleyVEVO" class="pure-menu-link" target="_blank">Bonus</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="pure-g">
+        <div class="photo-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-3">
+                <img src="../static/chili-crab.jpg"
+                     alt="Chili Crab">
+            </a>
+
+            <aside class="photo-box-caption">
+                <span>Chili Crab</a></span>
+            </aside>
+        </div>
+
+        <div class="text-box pure-u-1 pure-u-md-1-2 pure-u-lg-2-3">
+            <div class="l-box">
+                <h1 class="text-box-head">Tensorfood</h1>
+                <p class="text-box-subhead">AI Powered Image Recognition Algorithm for Singaporean Food</p>
+            </div>
+        </div>
+
+        <div class="photo-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-3">
+                <img src="../static/roti-prata.jpg"
+                     alt="Roti Prata">
+            </a>
+
+            <aside class="photo-box-caption">
+                <span>
+                    Roti Prata</a>
+                </span>
+            </aside>
+        </div>
+
+        <div class="photo-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-3">
+                <img src="../static/dim-sum.jpg"
+                     alt="Wanton Noodle">
+            </a>
+
+            <aside class="photo-box-caption">
+                <span>
+                    Dim Sum</a>
+                </span>
+            </aside>
+        </div>
+
+        <div class="photo-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-3">
+                <img src="../static/ice-kacang.jpg"
+                     alt="Ice Kacang">
+            </a>
+
+            <aside class="photo-box-caption">
+                <span>
+                    Ice Kacang</a>
+                </span>
+            </aside>
+        </div>
+
+        <div class="pure-u-1 form-box">
+            <div class="l-box">
+                <h2>Image Classifier</h2>
+                <input id="file-upload" class="hidden" type="file" accept="image/x-png,image/gif,image/jpeg" />
+                <label for="file-upload" id="file-drag" class="upload-box">
+                  <div id="upload-caption">Drop image here or click to select</div>
+                  <img id="image-preview" class="hidden" />
+                </label>
+            </div>
+              <div style="margin-bottom: 1rem;">
+                <input type="button" value="Predict" class="button" onclick="submitImage();" />
+                <input type="button" value="Clear" class="button" onclick="clearImage();" />
+            </div>
+        </div>
+
+
+        <div id="image-box">
+            <img id="image-display" />
+            <div id="pred-result" class="hidden"></div>
+            <svg id="loader" class="hidden" viewBox="0 0 32 32" width="32" height="32">
+                <circle id="spinner" cx="16" cy="16" r="14" fill="none"></circle>
+            </svg>
+        </div>
+
+        <div class="pure-u-1">
+            <div class="l-box">
+                <h2>Model Specifications</h2>
+                <p>
+                    This food classifier was built using Imagenet pretrained <a href="https://arxiv.org/abs/1512.00567">InceptionV3</a> architecture layered with a 128 node dense layer
+                    and a 12 node dense layers for classification. The model was trained on 800 images of 12 different classes of
+                    Singaporean food on 10 epochs, with early stopping when validation loss with a patience of 2. The Adam optimizer
+                    was used with a learning rate of 1e-3. The model was compiled using categorical cross-entropy loss. <br>
+                    <br>
+                    The model achieved accuracy of 85% with an estimated training time of 30 minutes.
+                </p>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="footer l-box is-center">
+        <h3 class="bottom-footer">Created by Mengyong Lee, based on Pure-CSS</h3>
+        <script src="../static/main.js"></script>
+
+    </div>
+</div>
+
+</body>
+</html>

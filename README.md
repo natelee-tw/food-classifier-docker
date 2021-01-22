@@ -1,7 +1,4 @@
 # Singapore Food Classifier
-![alt text]("img/app-coverpage.png")
-
-![alt text]("img/app-prediction.png")
 
 ## Table of Contents
 
@@ -13,6 +10,10 @@
 
 ## Deployment
 App deployed using docker and flask at https://singapore-food.herokuapp.com/.
+
+![Cover page](img/app-coverpage.png?raw=true "Cover Page")
+
+![Predictions](img/app-prediction.png?raw=true "Prediction")
 
 ## Overview
 "Singapore Food Classifier" Web APP is a food classifier which can predict your favorite local food with an image of the food you upload. 

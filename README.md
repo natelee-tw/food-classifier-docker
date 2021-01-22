@@ -48,6 +48,7 @@ Architecture of the model consists of the following:
 - Dropout layer
 - Output dense layer
 
+Model training codes can be found in [src/train.py](src/train.py)
 
 ## Authors
 

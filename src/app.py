@@ -7,11 +7,9 @@ from io import BytesIO
 from flask import Flask, jsonify, request, render_template
 from inference import load_models, resize_and_return_vector, predict_image, return_class, return_probability
 
-
 logging.basicConfig(level=logging.INFO)
 
 app = Flask(__name__)
-_port = int(os.environ.get("PORT", 5000))
 
 model = load_models('tensorfood.json', 'tensorfood.h5')
 app.logger.info('model lock and loaded')
@@ -51,4 +49,5 @@ def predict():
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", debug=True, port=_port)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", debug=False, port=port)
